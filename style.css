@@ -1,0 +1,135 @@
+/* Box Model Hack */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+/* Setting up basic style guide */
+
+:root {
+	--clr-primary: hsl(10, 79%, 65%);
+	--clr-secondary: hsl(186, 34%, 60%);
+
+	--clr-neutral-900: hsl(25, 47%, 15%);
+	--clr-neutral-600: hsl(28, 10%, 53%);
+	--clr-neutral-300: hsl(27, 66%, 92%);
+	--clr-neutral-100: hsl(33, 100%, 98%);
+
+	--ff-accent: 'DM Sans', sans-serif;
+
+	--fw-bold: 700;
+	--fw-regular: 400;
+}
+
+body {
+	background-color: var(--clr-neutral-300);
+	font-family: var(--ff-accent);
+	font-weight: var(--fw-regular);
+	font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Custom CSS Starts  */
+
+.attribution {
+	position: fixed;
+	bottom: 10px;
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+/* html, body {
+  height: 100%;
+  width: 100%;
+  background-color: hsl(27, 66%, 92%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+}
+
+header{
+  background-color: var(--clr-primary);
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 20px;
+  color: var(--clr-neutral-100);
+}
+
+.chart {
+  background-color: var(--clr-neutral-100);
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.month-total {
+	font-weight: var(--fw-bold);
+  font-size: 1.5rem;
+}
+
+
