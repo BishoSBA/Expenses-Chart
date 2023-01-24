@@ -1,11 +1,15 @@
 const ctx = document.getElementById('myChart');
 
+const data = fetch("./data.json")
+  .then((response) => response.json())
+
 new Chart(ctx, {
   type: 'bar',
   data: {
     labels: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
     datasets: [{
-      data: [12, 19, 3, 5, 2, 3, 2],
+
+      data: [12, 39, 3, 5, 2, 3, 2],
       borderWidth: 1
     }]
   },
@@ -13,6 +17,8 @@ new Chart(ctx, {
     hoverBackgroundColor: "hsl(186, 34%, 60%)",
     backgroundColor: "hsl(10, 79%, 65%)",
     borderRadius: 2,
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         grid: {
@@ -24,7 +30,10 @@ new Chart(ctx, {
       },
       y: {
         ticks: {
-          display: false
+          callback: function(value) {
+            return '$' + value;
+          },
+          display: false,
         },
         grid: {
           display: false
@@ -37,9 +46,6 @@ new Chart(ctx, {
     plugins: {
       legend: {
         display: false
-      },
-      tooltip: {
-        enabled: false
       }
     }
   }

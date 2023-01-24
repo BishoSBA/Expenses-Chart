@@ -114,7 +114,11 @@ header{
   color: var(--clr-neutral-100);
 }
 
-.chart {
+.chart-container {
+  min-height:200px;
+}
+
+.container {
   background-color: var(--clr-neutral-100);
   box-sizing: border-box;
   padding: 20px;
